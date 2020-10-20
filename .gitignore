@@ -1,0 +1,8 @@
+.ipynb_checkpoints
+/data/ml-100k
+/data/ml-10m
+/data/ml-20m
+data
+build
+.idea
+__pycache__

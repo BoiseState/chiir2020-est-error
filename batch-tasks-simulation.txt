@@ -1,0 +1,23 @@
+####################
+### ML-1M
+
+sbatch -J ml1mlu -p gpuq -t 2-00:00:00 batch-sims.sh simulate-lda-unif-csr --dataname=ml_1m
+sbatch -J ml1mlp -p gpuq -t 2-00:00:00 batch-sims.sh simulate-lda-pop-csr --dataname=ml_1m
+sbatch -J ml1miu -p shortq -t 12:00:00 batch-sims.sh simulate-ibp-unif-csr --dataname=ml_1m
+sbatch -J ml1mip -p shortq -t 12:00:00 batch-sims.sh simulate-ibp-pop-csr --dataname=ml_1m
+
+####################
+### AZ-Music-5core
+
+sbatch -J azm5lu -p gpuq -t 2-00:00:00 batch-sims.sh simulate-lda-unif-csr --dataname=az_music_5core
+sbatch -J azm5lp -p shortq -t 12:00:00 batch-sims.sh simulate-lda-pop-csr --dataname=az_music_5core
+sbatch -J azm5iu -p shortq -t 12:00:00 batch-sims.sh simulate-ibp-unif-csr --dataname=az_music_5core
+sbatch -J azm5ip -p shortq -t 12:00:00 batch-sims.sh simulate-ibp-pop-csr --dataname=az_music_5core
+
+####################
+### steam-video-game
+
+sbatch -J svglu -p gpuq -t 2-00:00:00 batch-sims.sh simulate-lda-unif-csr --dataname=steam_video_game
+sbatch -J svglp -p shortq -t 12:00:00 batch-sims.sh simulate-lda-pop-csr --dataname=steam_video_game
+sbatch -J svgiu -p gpuq -t 2-00:00:00 batch-sims.sh simulate-ibp-unif-csr --dataname=steam_video_game
+sbatch -J svgip -p gpuq -t 2-00:00:00 batch-sims.sh simulate-ibp-pop-csr --dataname=steam_video_game

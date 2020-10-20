@@ -1,0 +1,100 @@
+####################
+### ML-1M
+
+### lda unif
+sbatch -J ml1muclu -p gpuq -t 2-00:00:00 batch-sims.sh gp-minimize-lda-unif-csr --dataname=ml_1m --metric=ucorr
+sbatch -J ml1miclu -p gpuq -t 2-00:00:00 batch-sims.sh gp-minimize-lda-unif-csr --dataname=ml_1m --metric=icorr
+sbatch -J ml1mualu -p gpuq -t 2-00:00:00 batch-sims.sh gp-minimize-lda-unif-csr --dataname=ml_1m --metric=user-act
+sbatch -J ml1miplu -p gpuq -t 2-00:00:00 batch-sims.sh gp-minimize-lda-unif-csr --dataname=ml_1m --metric=item-pop
+
+### lda pop
+sbatch -J ml1muclp -p gpuq -t 2-00:00:00 batch-sims.sh gp-minimize-lda-pop-csr --dataname=ml_1m --metric=ucorr
+sbatch -J ml1miclp -p gpuq -t 2-00:00:00 batch-sims.sh gp-minimize-lda-pop-csr --dataname=ml_1m --metric=icorr
+sbatch -J ml1mualp -p shortq -t 12:00:00 batch-sims.sh gp-minimize-lda-pop-csr --dataname=ml_1m --metric=user-act
+sbatch -J ml1miplp -p shortq -t 12:00:00 batch-sims.sh gp-minimize-lda-pop-csr --dataname=ml_1m --metric=item-pop
+
+### ibp unif
+sbatch -J ml1muciu -p shortq -t 12:00:00 batch-sims.sh gp-minimize-ibp-unif-csr --dataname=ml_1m --metric=ucorr
+sbatch -J ml1miciu -p shortq -t 12:00:00 batch-sims.sh gp-minimize-ibp-unif-csr --dataname=ml_1m --metric=icorr
+sbatch -J ml1muaiu -p shortq -t 12:00:00 batch-sims.sh gp-minimize-ibp-unif-csr --dataname=ml_1m --metric=user-act
+sbatch -J ml1mipiu -p shortq -t 12:00:00 batch-sims.sh gp-minimize-ibp-unif-csr --dataname=ml_1m --metric=item-pop
+
+### ibp pop
+sbatch -J ml1mucip -p shortq -t 12:00:00 batch-sims.sh gp-minimize-ibp-pop-csr --dataname=ml_1m --metric=ucorr
+sbatch -J ml1micip -p shortq -t 12:00:00 batch-sims.sh gp-minimize-ibp-pop-csr --dataname=ml_1m --metric=icorr
+sbatch -J ml1muaip -p shortq -t 12:00:00 batch-sims.sh gp-minimize-ibp-pop-csr --dataname=ml_1m --metric=user-act
+sbatch -J ml1mipip -p shortq -t 12:00:00 batch-sims.sh gp-minimize-ibp-pop-csr --dataname=ml_1m --metric=item-pop
+
+### optimize relative loss
+sbatch -J ml1miu -p shortq -t 12:00:00 batch-sims.sh skopt-ibp-unif --dataname=ml_1m
+sbatch -J ml1mip -p shortq -t 12:00:00 batch-sims.sh skopt-ibp-pop --dataname=ml_1m
+sbatch -J ml1mlu -p shortq -t 12:00:00 batch-sims.sh skopt-lda-unif --dataname=ml_1m
+sbatch -J ml1mlp -p gpuq -t 2-00:00:00 batch-sims.sh skopt-lda-pop --dataname=ml_1m
+
+
+####################
+### AZ-Music-5core
+
+### lda unif
+sbatch -J azm5uclu -p gpuq -t 2-00:00:00 batch-sims.sh gp-minimize-lda-unif-csr --dataname=az_music_5core --metric=ucorr
+sbatch -J azm5iclu -p gpuq -t 2-00:00:00 batch-sims.sh gp-minimize-lda-unif-csr --dataname=az_music_5core --metric=icorr
+sbatch -J azm5ualu -p gpuq -t 2-00:00:00 batch-sims.sh gp-minimize-lda-unif-csr --dataname=az_music_5core --metric=user-act
+sbatch -J azm5iplu -p gpuq -t 2-00:00:00 batch-sims.sh gp-minimize-lda-unif-csr --dataname=az_music_5core --metric=item-pop
+
+### lda pop
+sbatch -J azm5uclp -p shortq -t 12:00:00 batch-sims.sh gp-minimize-lda-pop-csr --dataname=az_music_5core --metric=ucorr
+sbatch -J azm5iclp -p shortq -t 12:00:00 batch-sims.sh gp-minimize-lda-pop-csr --dataname=az_music_5core --metric=icorr
+sbatch -J azm5ualp -p shortq -t 12:00:00 batch-sims.sh gp-minimize-lda-pop-csr --dataname=az_music_5core --metric=user-act
+sbatch -J azm5iplp -p shortq -t 12:00:00 batch-sims.sh gp-minimize-lda-pop-csr --dataname=az_music_5core --metric=item-pop
+
+### ibp unif
+sbatch -J azm5uciu -p shortq -t 12:00:00 batch-sims.sh gp-minimize-ibp-unif-csr --dataname=az_music_5core --metric=ucorr
+sbatch -J azm5iciu -p shortq -t 12:00:00 batch-sims.sh gp-minimize-ibp-unif-csr --dataname=az_music_5core --metric=icorr
+sbatch -J azm5uaiu -p shortq -t 12:00:00 batch-sims.sh gp-minimize-ibp-unif-csr --dataname=az_music_5core --metric=user-act
+sbatch -J azm5ipiu -p shortq -t 12:00:00 batch-sims.sh gp-minimize-ibp-unif-csr --dataname=az_music_5core --metric=item-pop
+
+### ibp pop
+sbatch -J azm5ucip -p shortq -t 12:00:00 batch-sims.sh gp-minimize-ibp-pop-csr --dataname=az_music_5core --metric=ucorr
+sbatch -J azm5icip -p shortq -t 12:00:00 batch-sims.sh gp-minimize-ibp-pop-csr --dataname=az_music_5core --metric=icorr
+sbatch -J azm5uaip -p shortq -t 12:00:00 batch-sims.sh gp-minimize-ibp-pop-csr --dataname=az_music_5core --metric=user-act
+sbatch -J azm5ipip -p shortq -t 12:00:00 batch-sims.sh gp-minimize-ibp-pop-csr --dataname=az_music_5core --metric=item-pop
+
+### optimize relative loss
+sbatch -J azm5iu -p shortq -t 12:00:00 batch-sims.sh skopt-ibp-unif --dataname=az_music_5core
+sbatch -J azm5ip -p shortq -t 12:00:00 batch-sims.sh skopt-ibp-pop --dataname=az_music_5core
+sbatch -J azm5lu -p shortq -t 12:00:00 batch-sims.sh skopt-lda-unif --dataname=az_music_5core
+sbatch -J azm5lp -p shortq -t 12:00:00 batch-sims.sh skopt-lda-pop --dataname=az_music_5core
+
+
+####################
+### steam-video-game
+
+### lda unif
+sbatch -J svguclu -p gpuq -t 2-00:00:00 batch-sims.sh gp-minimize-lda-unif-csr --dataname=steam_video_game --metric=ucorr
+sbatch -J svgiclu -p gpuq -t 2-00:00:00 batch-sims.sh gp-minimize-lda-unif-csr --dataname=steam_video_game --metric=icorr
+sbatch -J svgualu -p gpuq -t 2-00:00:00 batch-sims.sh gp-minimize-lda-unif-csr --dataname=steam_video_game --metric=user-act
+sbatch -J svgiplu -p gpuq -t 2-00:00:00 batch-sims.sh gp-minimize-lda-unif-csr --dataname=steam_video_game --metric=item-pop
+
+### lda pop
+sbatch -J svguclp -p shortq -t 12:00:00 batch-sims.sh gp-minimize-lda-pop-csr --dataname=steam_video_game --metric=ucorr
+sbatch -J svgiclp -p shortq -t 12:00:00 batch-sims.sh gp-minimize-lda-pop-csr --dataname=steam_video_game --metric=icorr
+sbatch -J svgualp -p shortq -t 12:00:00 batch-sims.sh gp-minimize-lda-pop-csr --dataname=steam_video_game --metric=user-act
+sbatch -J svgiplp -p shortq -t 12:00:00 batch-sims.sh gp-minimize-lda-pop-csr --dataname=steam_video_game --metric=item-pop
+
+### ibp unif
+sbatch -J svguciu -p piret batch-sims.sh gp-minimize-ibp-unif-csr --dataname=steam_video_game --metric=ucorr
+sbatch -J svgiciu -p gpuq -t 2-00:00:00 batch-sims.sh gp-minimize-ibp-unif-csr --dataname=steam_video_game --metric=icorr
+sbatch -J svguaiu -p piret -t 00:00:00 batch-sims.sh gp-minimize-ibp-unif-csr --dataname=steam_video_game --metric=user-act
+sbatch -J svgipiu -p gpuq -t 2-00:00:00 batch-sims.sh gp-minimize-ibp-unif-csr --dataname=steam_video_game --metric=item-pop
+
+### ibp pop
+sbatch -J svgucip -p gpuq -t 2-00:00:00 batch-sims.sh gp-minimize-ibp-pop-csr --dataname=steam_video_game --metric=ucorr
+sbatch -J svgicip -p gpuq -t 2-00:00:00 batch-sims.sh gp-minimize-ibp-pop-csr --dataname=steam_video_game --metric=icorr
+sbatch -J svguaip -p gpuq -t 2-00:00:00 batch-sims.sh gp-minimize-ibp-pop-csr --dataname=steam_video_game --metric=user-act
+sbatch -J svgipip -p gpuq -t 2-00:00:00 batch-sims.sh gp-minimize-ibp-pop-csr --dataname=steam_video_game --metric=item-pop
+
+### optimize relative loss
+sbatch -J svgiu -p gpuq -t 2-00:00:00 batch-sims.sh skopt-ibp-unif --dataname=steam_video_game
+sbatch -J svgip -p gpuq -t 2-00:00:00 batch-sims.sh skopt-ibp-pop --dataname=steam_video_game
+sbatch -J svglu -p piret batch-sims.sh skopt-lda-unif --dataname=steam_video_game
+sbatch -J svglp -p piret batch-sims.sh skopt-lda-pop --dataname=steam_video_game
